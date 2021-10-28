@@ -1,0 +1,43 @@
+.post-wrapper {
+  width: 100%;
+  color: black;
+}
+
+.post-wrapper .metaDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-wrapper .metaDetails p {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.post-wrapper .title {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.post-content {
+  width: 100%;
+  overflow: hidden;
+}
+
+.post-content .post-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.post-wrapper .postInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-wrapper .postInfo p {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
