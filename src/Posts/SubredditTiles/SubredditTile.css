@@ -1,6 +1,6 @@
 .subreddit-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     background: #011935;
     padding: 16px;
