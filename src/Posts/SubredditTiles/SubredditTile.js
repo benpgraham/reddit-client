@@ -18,7 +18,7 @@ const SubredditTile = ({ subreddit }) => {
             <div className="subreddit-wrapper">
             
                 <div className="subreddit-icon">
-                { (icon_img) && <img src={icon_img} alt="" className="subreddit-image-block" /> || <FaReddit className="default-icon"/> }
+                { ((icon_img) && <img src={icon_img} alt="" className="subreddit-image-block" /> ) || <FaReddit className="default-icon"/> }
                 </div>
                 <div className="subreddit-name">
                         <p>r/{display_name}</p>

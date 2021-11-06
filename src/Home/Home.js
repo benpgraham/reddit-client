@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PostTiles from '../Posts/PostTiles/PostTiles';
-import { fetchPosts, fetchComments } from '../store/redditSlice';
+import { fetchPosts, fetchComments, selectFilteredPosts } from '../store/redditSlice';
 import './Home.css'
 
 const Home = () => {
 
     const reddit = useSelector((state) => state.reddit);
-    const { posts, isLoading, error, selectedSubreddit } = reddit;
+    const { isLoading, error, selectedSubreddit } = reddit;
+    const posts = useSelector(selectFilteredPosts);
     const dispatch = useDispatch();
 
     const onToggleComments = (index) => {

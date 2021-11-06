@@ -26,6 +26,9 @@ const redditSlice = createSlice({
             state.isLoading = false;
             state.error = true;
         },
+        setSearchTerm (state, action) {
+            state.searchTerm = action.payload;
+        },
         toggleShowingComments(state, action) {
             state.posts[action.payload].showingComments = !state.posts[action.payload].showingComments;
         },
@@ -56,6 +59,7 @@ export const {
     startGetPosts,
     getPostsSuccess,
     getPostsFailed,
+    setSearchTerm,
     startGetComments,
     getCommentsSuccess,
     getCommentsFailed,
@@ -93,4 +97,20 @@ export const fetchComments = (index, permalink) => async (dispatch) => {
     } catch (error) {
         dispatch(getCommentsFailed(index));
     }
-}
+};
+
+const selectPosts = (state) => state.reddit.posts;
+const selectSearchTerm = (state) => state.reddit.searchTerm;
+
+export const selectFilteredPosts = createSelector(
+  [selectPosts, selectSearchTerm],
+  (posts, searchTerm) => {
+    if (searchTerm !== '') {
+      return posts.filter((post) =>
+        post.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    console.log('unusual');
+    return posts;
+  }
+);

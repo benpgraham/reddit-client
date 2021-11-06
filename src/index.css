@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  background-color: #011935;
+}
+
 #root {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
