@@ -52,3 +52,11 @@
   background: #6785a0;
   color: white;
 }
+
+.comment-wrapper {
+  width: 100%;
+}
+
+.skeleton-wrapper {
+  padding: 16px 0px;
+}

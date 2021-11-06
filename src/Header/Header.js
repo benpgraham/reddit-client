@@ -13,7 +13,6 @@ const Header = () => {
     const { selectedSubreddit, subredditIcon } = reddit;
 
     const subreddits = useSelector((state) => state.subreddits);
-    const searchTerm = useSelector((state) => state.reddit.searchTerm);
     const { subredditsList, error, isLoading } = subreddits;
     const dispatch = useDispatch();
 
@@ -33,6 +32,10 @@ const Header = () => {
         dispatch(setSearchTerm(localSearch));
     };
 
+    const toggleOpen = () => {
+        setOpen(!open);
+    }
+
     return (
         <>
             <div className="search">
@@ -50,10 +53,10 @@ const Header = () => {
             </div>
             <div className="logo">
                 <FaReddit className="logo-reddit" />
-                <h1>SHIT REDDIT</h1>
+                <h1>MINIMAL REDDIT</h1>
             </div>
             <div className="subreddits">
-                <a href="#" className="subreddit-dropdown" onClick={() => setOpen(!open)}>
+                <a href="#" className="subreddit-dropdown" onClick={() => toggleOpen()} >
                     <DropdownHeader subreddit={{
                         display_name: selectedSubreddit, 
                         icon_img: subredditIcon}} 
@@ -62,7 +65,7 @@ const Header = () => {
                 {open && 
                     <div className="dropdown-container">
                         {subredditsList.map((subreddit) => (
-                        <SubredditTile subreddit={subreddit} />
+                        <SubredditTile subreddit={subreddit} toggleOpen={toggleOpen}/>
                     ))}
                     </div>
                 }

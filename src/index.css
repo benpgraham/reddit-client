@@ -13,7 +13,7 @@ html {
 
 #root {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 3fr 2fr;
   grid-gap: 16px;
   background-color: #011935;
   color: white;

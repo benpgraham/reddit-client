@@ -4,13 +4,14 @@ import { updateSelectedSubreddit } from '../../store/redditSlice';
 import { FaReddit } from 'react-icons/fa';
 import './SubredditTile.css'
 
-const SubredditTile = ({ subreddit }) => {
+const SubredditTile = ({ subreddit, toggleOpen }) => {
     const dispatch = useDispatch();
 
     const { display_name, icon_img} = subreddit;
 
     const updateSubreddit = (subreddit, icon) => {
         dispatch(updateSelectedSubreddit({subreddit, icon}));
+        toggleOpen();
     }
 
     return (

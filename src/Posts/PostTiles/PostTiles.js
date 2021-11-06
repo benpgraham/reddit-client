@@ -1,16 +1,33 @@
-import userEvent from '@testing-library/user-event';
 import React from 'react';
 import Card from '../../Card/Card';
 import Comment from '../../Comment/Comment';
 import './PostTiles.css';
 import { FaRegComment } from 'react-icons/fa';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const PostTiles = ({ posts, onToggleComments }) => {
 
     const renderComments = () => {
-        if(posts.showingComments) {
+        if (posts.errorComments) {
             return (
                 <div>
+                    <h3> Error loading comments</h3>
+                </div>
+            );
+        }
+
+        if (posts.loadingComments) {
+            return (
+                <div className="skeleton-wrapper" >
+                    <Skeleton count={5} height={25} />
+                </div>
+            );
+        }
+
+        if(posts.showingComments) {
+            return (
+                <div className="comment-wrapper" >
                     {posts.comments.map((comment) => (
                         <Comment comment={comment} key={comment.id} />
                     ))}
@@ -36,7 +53,7 @@ const PostTiles = ({ posts, onToggleComments }) => {
                             <a href={posts.url} target="_blank">    
                             <img src={posts.url} alt="" className="post-image" />
                             </a>
-                        </div>  
+                        </div>
                     </div>
                     <div className="postInfo">
                         <p>Votes: {posts.ups}</p>

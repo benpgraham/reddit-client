@@ -25,5 +25,9 @@ const Reddit = {
 
 }
 
-module.exports = Reddit;
+export const {
+    getHomePage,
+    getSubreddits,
+    getPostComments,
+} = Reddit;
 

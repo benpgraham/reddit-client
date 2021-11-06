@@ -34,11 +34,12 @@ const redditSlice = createSlice({
         },
         startGetComments(state, action) {
             state.posts[action.payload].showingComments = !state.posts[action.payload].showingComments;
-            if(state.posts[action.payload].showingComments) {
+            if(!state.posts[action.payload].showingComments) {
                 return;
             }
             state.posts[action.payload].loadingComments = true;
             state.posts[action.payload].errorComments = false;
+            console.log('We did get here')
         },
         getCommentsSuccess(state, action) {
             state.posts[action.payload.index].loadingComments = false;
@@ -110,7 +111,6 @@ export const selectFilteredPosts = createSelector(
         post.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-    console.log('unusual');
     return posts;
   }
 );
