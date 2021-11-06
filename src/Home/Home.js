@@ -13,7 +13,6 @@ const Home = () => {
     const onToggleComments = (index) => {
         const getComments = (permalink) => {
             dispatch(fetchComments(index, permalink));
-            console.log('comment toggle')
         }
         return getComments;
     }

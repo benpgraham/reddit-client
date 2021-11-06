@@ -1,8 +1,9 @@
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import Card from '../../Card/Card';
+import Comment from '../../Comment/Comment';
 import './PostTiles.css';
-import { BiComment } from 'react-icons/bi';
+import { FaRegComment } from 'react-icons/fa';
 
 const PostTiles = ({ posts, onToggleComments }) => {
 
@@ -11,7 +12,7 @@ const PostTiles = ({ posts, onToggleComments }) => {
             return (
                 <div>
                     {posts.comments.map((comment) => (
-                        <p>Comment</p>
+                        <Comment comment={comment} key={comment.id} />
                     ))}
                 </div>
             )
@@ -46,7 +47,7 @@ const PostTiles = ({ posts, onToggleComments }) => {
                             onClick={() => onToggleComments(posts.permalink)}
                             aria-label="Show Comments"
                         >
-                            <BiComment className="icon-action" />
+                            <FaRegComment className="icon-action" />
                         </button>
                         </span>
                     </div>

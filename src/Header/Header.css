@@ -1,0 +1,52 @@
+header {
+    background-color: #1b3b58;
+    position: sticky;
+    top: 0;
+  }
+  
+  header .logo {
+    font-weight: bold;
+    padding: var(--spacing-1) 0;
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  header .logo-reddit {
+    font-size: 2rem;
+    margin-right: 8px;
+  }
+  
+  header h1 {
+    color: white;
+  }
+
+  header .subreddits {
+      grid-column: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  header .dropdown-container {
+    position: absolute;
+    top: 70px;
+    background: white;
+    height: 510px;
+    overflow-y: scroll;
+    border-radius: 4px;
+  }
+
+ header .subreddits .subreddit-dropdown {
+    text-decoration: none;
+    color: white;
+  }
+
+  @media only screen and (max-width: 600px) {
+  
+    header .subreddits {
+      display: none;
+    }
+
+  }

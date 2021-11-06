@@ -6,14 +6,15 @@ const initialState = {
     error: false,
     isLoading: false,
     searchTerm: '',
-    selectedSubreddit: '/r/popular/'
+    selectedSubreddit: 'r/AskReddit',
+    subredditIcon: 'https://b.thumbs.redditmedia.com/EndDxMGB-FTZ2MGtjepQ06cQEkZw_YQAsOUudpb9nSQ.png'
 };
 
 const redditSlice = createSlice({
     name: 'redditPosts',
     initialState,
     reducers: {
-        startGetPosts(state, action) {
+        startGetPosts(state) {
             state.isLoading = true;
             state.error = false;
         },
@@ -44,6 +45,10 @@ const redditSlice = createSlice({
             state.posts[action.payload].loadingComments = false;
             state.posts[action.payload].errorComments = true;
         },
+        updateSelectedSubreddit(state, action) {
+            state.selectedSubreddit = 'r/' + action.payload.subreddit;
+            state.subredditIcon = action.payload.icon;
+        }
     },
 });
 
@@ -53,7 +58,8 @@ export const {
     getPostsFailed,
     startGetComments,
     getCommentsSuccess,
-    getCommentsFailed
+    getCommentsFailed,
+    updateSelectedSubreddit
 } = redditSlice.actions;
 
 export default redditSlice.reducer;
@@ -84,9 +90,7 @@ export const fetchComments = (index, permalink) => async (dispatch) => {
         dispatch(startGetComments(index));
         const comments = await getPostComments(permalink);
         dispatch(getCommentsSuccess({index, comments}));
-        console.log('success')
     } catch (error) {
         dispatch(getCommentsFailed(index));
-        console.log('error')
     }
 }
