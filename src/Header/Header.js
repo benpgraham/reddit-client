@@ -13,7 +13,7 @@ const Header = () => {
     const { selectedSubreddit, subredditIcon } = reddit;
 
     const subreddits = useSelector((state) => state.subreddits);
-    const { subredditsList, error, isLoading } = subreddits;
+    const { subredditsList } = subreddits;
     const dispatch = useDispatch();
 
     const [open, setOpen] = useState(false);
@@ -21,7 +21,7 @@ const Header = () => {
 
     useEffect(() => {
         dispatch(fetchSubreddits());
-    }, []);
+    }, [dispatch]);
 
     const searchTermChange = (e) => {
         setLocalSearch(e.target.value);
@@ -56,12 +56,12 @@ const Header = () => {
                 <h1>MINIMAL REDDIT</h1>
             </div>
             <div className="subreddits">
-                <a href="#" className="subreddit-dropdown" onClick={() => toggleOpen()} >
+                <button className="subreddit-dropdown" onClick={() => toggleOpen()} >
                     <DropdownHeader subreddit={{
                         display_name: selectedSubreddit, 
                         icon_img: subredditIcon}} 
                     />
-                </a>
+                </button>
                 {open && 
                     <div className="dropdown-container">
                         {subredditsList.map((subreddit) => (

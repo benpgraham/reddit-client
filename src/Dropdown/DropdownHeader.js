@@ -9,7 +9,7 @@ const DropdownHeader = ({ subreddit }) => {
     return (
         <div className="dropdown-wrapper">
             <div className="dropdown-icon">
-               { (icon_img) && <img src={icon_img} alt="" className="dropdown-image-block" /> || <FaReddit className="default-icon" /> }
+               { ((icon_img) && <img src={icon_img} alt="" className="dropdown-image-block" />) || <FaReddit className="default-icon" /> }
             </div>
             <div className="dropdown-name">
                     <p>{display_name}</p>

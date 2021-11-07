@@ -15,9 +15,8 @@ const SubredditTile = ({ subreddit, toggleOpen }) => {
     }
 
     return (
-        <a className="updateSubreddit"  href='#' onClick={() => updateSubreddit(display_name, icon_img)}>
+        <button className="updateSubreddit" onClick={() => updateSubreddit(display_name, icon_img)}>
             <div className="subreddit-wrapper">
-            
                 <div className="subreddit-icon">
                 { ((icon_img) && <img src={icon_img} alt="" className="subreddit-image-block" /> ) || <FaReddit className="default-icon"/> }
                 </div>
@@ -25,7 +24,7 @@ const SubredditTile = ({ subreddit, toggleOpen }) => {
                         <p>r/{display_name}</p>
                 </div>
             </div>
-        </a>
+        </button>
     )
 };
 

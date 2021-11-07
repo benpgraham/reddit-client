@@ -60,6 +60,12 @@ header {
     color: white;
   }
 
+header .subreddits button {
+    border: none;
+    background-color:#1b3b58;
+    white-space: normal;
+} 
+
 @media only screen and (max-width: 1000px) {
 
     header .logo-reddit {

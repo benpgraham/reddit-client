@@ -10,24 +10,24 @@ const PostLoading = () => {
             <Card>
                 <div className="top">
                     <div className="left-top">
-                        <Skeleton width={100} />
+                        <Skeleton width={75} />
                     </div>
                     <div className="right-top">
-                        <Skeleton width={100} />
+                        <Skeleton width={75} />
                     </div>
                 </div>
                 <div className="title" >
-                    <Skeleton height={30} />
+                    <Skeleton width={350} height={30} />
                 </div>
                 <div className="content" >
                     <Skeleton height={250} />
                 </div>
                 <div className="bottom">
                     <div className="left-bottom">
-                        <Skeleton width={100} />
+                        <Skeleton width={75} />
                     </div>
                     <div className="right-bottom">
-                        <Skeleton width={100} />
+                        <Skeleton width={75} />
                     </div>
                 </div>
             </ Card>

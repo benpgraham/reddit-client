@@ -1,3 +1,10 @@
+.updateSubreddit {
+    text-decoration: none;
+    color: white;
+    background-color: #011935;
+    display: flex;
+}
+
 .subreddit-wrapper {
     display: flex;
     justify-content: left;
@@ -40,7 +47,3 @@
     overflow: hidden;
 }
 
-.updateSubreddit {
-    text-decoration: none;
-    color: white;
-}
