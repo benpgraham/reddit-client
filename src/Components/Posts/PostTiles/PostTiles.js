@@ -38,12 +38,12 @@ const PostTiles = ({ posts, onToggleComments }) => {
     }
 
     const renderMedia = () => {
-        if(posts.secure_media) {
-            return (
-                <video controls autoplay className="post-image" >
-                    <source src={posts.secure_media.reddit_video.fallback_url + '#t=0.001'} />
-                </video>
-            );
+        if(posts.is_video) {
+                return (
+                    <video controls autoplay className="post-image" >
+                        <source src={posts.secure_media.reddit_video.fallback_url + '#t=0.001'} />
+                    </video>
+                );
         } else {
             return (
                 <img src={posts.url} alt="" className="post-image" />
