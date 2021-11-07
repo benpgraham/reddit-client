@@ -64,9 +64,7 @@ const PostTiles = ({ posts, onToggleComments }) => {
                     </div>
                     <div className="post-content">
                         <div className="post-image-container">
-                            <a href={posts.url} target="_blank" rel="noreferrer" > 
                                 {renderMedia()}
-                            </a>
                         </div>
                     </div>
                     <div className="postInfo">
