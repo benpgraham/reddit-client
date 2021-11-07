@@ -58,6 +58,7 @@ const PostTiles = ({ posts, onToggleComments }) => {
                     <div className="postInfo">
                         <p>Votes: {posts.ups}</p>
                         <span className="post-comments-container">
+                        <p className="comment-count" >{posts.num_comments}</p>
                         <button
                             type="button"
                             className={`icon-action-button ${posts.showingComments && 'showing-comments'}`}

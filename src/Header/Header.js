@@ -47,9 +47,11 @@ const Header = () => {
                     onChange={searchTermChange}
                     />
                 </form>
-                <button type="submit">
-                    <HiOutlineSearch className="search-button" />
-                </button>
+                <div className="button-wrapper">
+                    <button type="submit" className="search-button-wrapper" onClick={filterPosts}>
+                        <HiOutlineSearch className="search-button" />
+                    </button>
+                </div>
             </div>
             <div className="logo">
                 <FaReddit className="logo-reddit" />

@@ -49,8 +49,19 @@
 }
 
 .icon-action-button:hover {
-  background: #6785a0;
+  background: #426380;
   color: white;
+}
+
+.post-comments-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-count {
+  padding-bottom: 2px;
+  padding-right: 4px;
 }
 
 .comment-wrapper {

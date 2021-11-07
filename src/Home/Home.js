@@ -41,7 +41,7 @@ const Home = () => {
 
     if (posts.length === 0) {
         return (
-            <h2>No posts found including: {searchTerm} </h2>
+            <h2>Sorry, no posts found including: "{searchTerm}" </h2>
         );
     }
 
