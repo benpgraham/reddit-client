@@ -37,6 +37,20 @@ const PostTiles = ({ posts, onToggleComments }) => {
         return null;
     }
 
+    const renderMedia = () => {
+        if(posts.secure_media) {
+            return (
+                <video controls autoplay className="post-image" >
+                    <source src={posts.secure_media.reddit_video.fallback_url} />
+                </video>
+            );
+        } else {
+            return (
+                <img src={posts.url} alt="" className="post-image" />
+            );
+        }
+    }
+
     return(
         <article key={posts.id}>
             <Card>
@@ -50,8 +64,8 @@ const PostTiles = ({ posts, onToggleComments }) => {
                     </div>
                     <div className="post-content">
                         <div className="post-image-container">
-                            <a href={posts.url} target="_blank" rel="noreferrer" >    
-                            <img src={posts.url} alt="" className="post-image" />
+                            <a href={posts.url} target="_blank" rel="noreferrer" > 
+                                {renderMedia()}
                             </a>
                         </div>
                     </div>

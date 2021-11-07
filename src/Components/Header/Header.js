@@ -67,7 +67,7 @@ const Header = () => {
                 {open && 
                     <div className="dropdown-container">
                         {subredditsList.map((subreddit) => (
-                        <SubredditTile subreddit={subreddit} toggleOpen={toggleOpen}/>
+                        <SubredditTile subreddit={subreddit} toggleOpen={toggleOpen} key={subreddit.id} />
                     ))}
                     </div>
                 }

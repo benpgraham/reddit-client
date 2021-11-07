@@ -39,7 +39,6 @@ const redditSlice = createSlice({
             }
             state.posts[action.payload].loadingComments = true;
             state.posts[action.payload].errorComments = false;
-            console.log('We did get here')
         },
         getCommentsSuccess(state, action) {
             state.posts[action.payload.index].loadingComments = false;
