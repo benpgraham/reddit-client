@@ -41,7 +41,7 @@ const PostTiles = ({ posts, onToggleComments }) => {
         if(posts.secure_media) {
             return (
                 <video controls autoplay className="post-image" >
-                    <source src={posts.secure_media.reddit_video.fallback_url} />
+                    <source src={posts.secure_media.reddit_video.fallback_url + '#t=0.001'} />
                 </video>
             );
         } else {
