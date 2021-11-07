@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PostTiles from '../Posts/PostTiles/PostTiles';
 import PostLoading from '../Posts/PostLoading/PostLoading';
-import { fetchPosts, fetchComments, selectFilteredPosts } from '../store/redditSlice';
+import { fetchPosts, fetchComments, selectFilteredPosts } from '../../store/redditSlice';
 import './Home.css'
 
 const Home = () => {

@@ -3,8 +3,8 @@ import './Header.css';
 import { FaReddit } from 'react-icons/fa';
 import { HiOutlineSearch } from 'react-icons/hi';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchSubreddits } from '../store/subredditSlice';
-import { setSearchTerm } from '../store/redditSlice';
+import { fetchSubreddits } from '../../store/subredditSlice';
+import { setSearchTerm } from '../../store/redditSlice';
 import SubredditTile from '../Posts/SubredditTiles/SubredditTile';
 import DropdownHeader from '../Dropdown/DropdownHeader';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { updateSelectedSubreddit } from '../../store/redditSlice';
+import { updateSelectedSubreddit } from '../../../store/redditSlice';
 import { FaReddit } from 'react-icons/fa';
 import './SubredditTile.css'
 
