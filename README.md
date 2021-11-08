@@ -1,3 +1,9 @@
+# Overview
+
+This project is a simple React/Redux client that interfaces with the outdated Reddit JSON API (https://github.com/reddit-archive/reddit/wiki/JSON)
+
+The site style is minimal and inspired by the layout of the website (https://tumblr.com)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
