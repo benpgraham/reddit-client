@@ -12,7 +12,7 @@ const Comment = ({ comment }) => {
                 <p>{comment.author}</p>
             </div>
             <div className="comment-body">
-                <ReactMarkdown children={comment.body} />
+                <ReactMarkdown className="comment-text" children={comment.body} />
             </div>
         </div>
     )

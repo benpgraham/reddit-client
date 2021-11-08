@@ -46,7 +46,7 @@ const Home = () => {
     }
 
     return (
-        <>
+        <div className="central-display" >
             {posts.map((post, index) => (
                 <PostTiles 
                 posts={post}
@@ -54,7 +54,7 @@ const Home = () => {
                 onToggleComments={onToggleComments(index)}
                 />
             ))}
-        </>
+        </div>
     )
 }
 

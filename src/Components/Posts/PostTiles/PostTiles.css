@@ -53,9 +53,21 @@
   border-radius: 4px;
 }
 
+.external-link {
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: black;
+}
+
+.external-link:hover {
+  cursor: pointer;
+}
+
 .icon-action-button:hover {
   background: #426380;
   color: white;
+  cursor: pointer;
 }
 
 .post-comments-container {
@@ -70,7 +82,7 @@
 }
 
 .comment-wrapper {
-  width: 100%;
+  max-width: 100%;
 }
 
 .skeleton-wrapper {

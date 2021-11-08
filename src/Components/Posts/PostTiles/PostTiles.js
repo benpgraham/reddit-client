@@ -3,12 +3,41 @@ import Card from '../../Card/Card';
 import Comment from '../../Comment/Comment';
 import './PostTiles.css';
 import { FaRegComment } from 'react-icons/fa';
+import { BiLinkExternal } from 'react-icons/bi';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
 const PostTiles = ({ posts, onToggleComments }) => {
 
+    // Render's a direct link to stickied posts, that can take users to the permalink
+    const renderCommentType = () => {
+        if(posts.stickied) {
+            return (
+                <span className="post-comments-container">
+                    <a href={posts.url} className="external-link" target="_blank" rel="noreferrer" >
+                        <BiLinkExternal className="icon-action" />
+                    </a>
+                </span>
+            )
+        } else {
+            return (
+                <span className="post-comments-container">
+                    <p className="comment-count" >{posts.num_comments}</p>
+                    <button
+                        type="button"
+                        className={`icon-action-button ${posts.showingComments && 'showing-comments'}`}
+                        onClick={() => onToggleComments(posts.permalink)}
+                        aria-label="Show Comments"
+                    >
+                        <FaRegComment className="icon-action" />
+                    </button>
+                </span>
+            );
+        }
+    }
+
     const renderComments = () => {
+
         if (posts.errorComments) {
             return (
                 <div>
@@ -69,17 +98,7 @@ const PostTiles = ({ posts, onToggleComments }) => {
                     </div>
                     <div className="postInfo">
                         <p>Votes: {posts.ups}</p>
-                        <span className="post-comments-container">
-                        <p className="comment-count" >{posts.num_comments}</p>
-                        <button
-                            type="button"
-                            className={`icon-action-button ${posts.showingComments && 'showing-comments'}`}
-                            onClick={() => onToggleComments(posts.permalink)}
-                            aria-label="Show Comments"
-                        >
-                            <FaRegComment className="icon-action" />
-                        </button>
-                        </span>
+                        {renderCommentType()}
                     </div>
 
                     {renderComments()}

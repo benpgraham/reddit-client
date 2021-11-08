@@ -4,6 +4,7 @@
     border-radius: 4px;
     margin: 8px 0;
     padding: 16px;
+    max-width: 100%;
 }
 
 .comment:hover {
@@ -31,4 +32,9 @@
 
 .comment .comment-body a {
     color: rgb(177, 217, 255);
+}
+
+.comment .cooment-text {
+    width: 100%;
+    word-wrap: break-word;
 }
