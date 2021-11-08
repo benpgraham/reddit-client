@@ -34,7 +34,7 @@ export const {
 
 export default subredditSlice.reducer;
 
-// Redux thunks to fetch the subreddits
+// Redux thunk to fetch the subreddits
 
 export const fetchSubreddits = () => async (dispatch) => {
     try {

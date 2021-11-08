@@ -68,7 +68,7 @@ export const {
 
 export default redditSlice.reducer;
 
-// Redux thunk to handle getting posts
+// Redux thunk to handle fetching posts
 export const fetchPosts = (subreddit) => async (dispatch) => {
     try {
         dispatch(startGetPosts());
@@ -89,6 +89,7 @@ export const fetchPosts = (subreddit) => async (dispatch) => {
     }
 }
 
+// Redux thunk to handle fetching comments
 export const fetchComments = (index, permalink) => async (dispatch) => {
     try {
         dispatch(startGetComments(index));
@@ -99,6 +100,8 @@ export const fetchComments = (index, permalink) => async (dispatch) => {
     }
 };
 
+
+// Custom selector to filter and return only the posts that contain the users search term
 const selectPosts = (state) => state.reddit.posts;
 const selectSearchTerm = (state) => state.reddit.searchTerm;
 

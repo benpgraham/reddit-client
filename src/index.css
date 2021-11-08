@@ -33,6 +33,8 @@ header {
   text-align: center;
 }
 
+/* Basic tweaks for mobile viewing */
+
 @media only screen and (max-width: 600px) {
   #root {
     grid-template-columns: 1fr 30fr 1fr;

@@ -6,6 +6,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 const PostLoading = () => {
 
+    // Copy of post tile with loading skeletons in the place of content
     return (
             <Card>
                 <div className="top">

@@ -9,7 +9,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 const PostTiles = ({ posts, onToggleComments }) => {
 
-    // Render's a direct link to stickied posts, that can take users to the permalink
+    // Render's a direct link to stickied posts, that can take users to the permalink, otherwise renders the load comment button
     const renderCommentType = () => {
         if(posts.stickied) {
             return (
@@ -36,16 +36,9 @@ const PostTiles = ({ posts, onToggleComments }) => {
         }
     }
 
+    // Loads comments if they exist
     const renderComments = () => {
-
-        if (posts.errorComments) {
-            return (
-                <div>
-                    <h3> Error loading comments</h3>
-                </div>
-            );
-        }
-
+        // While loading display animated loading skeleton
         if (posts.loadingComments) {
             return (
                 <div className="skeleton-wrapper" >
@@ -54,6 +47,16 @@ const PostTiles = ({ posts, onToggleComments }) => {
             );
         }
 
+        // Checks for error
+        if (posts.errorComments) {
+            return (
+                <div>
+                    <h3> Error loading comments</h3>
+                </div>
+            );
+        }
+
+        // Displays comments when loaded by mapping each comment into the comment component
         if(posts.showingComments) {
             return (
                 <div className="comment-wrapper" >
@@ -66,6 +69,7 @@ const PostTiles = ({ posts, onToggleComments }) => {
         return null;
     }
 
+    // Checks the media type for video or image, returns the appropriate html block
     const renderMedia = () => {
         if(posts.is_video) {
                 return (
@@ -80,7 +84,7 @@ const PostTiles = ({ posts, onToggleComments }) => {
         }
     }
 
-    return(
+    return (
         <article key={posts.id}>
             <Card>
                 <div className="post-wrapper">
@@ -93,7 +97,7 @@ const PostTiles = ({ posts, onToggleComments }) => {
                     </div>
                     <div className="post-content">
                         <div className="post-image-container">
-                                {renderMedia()}
+                            {renderMedia()}
                         </div>
                     </div>
                     <div className="postInfo">

@@ -9,29 +9,35 @@ import SubredditTile from '../Posts/SubredditTiles/SubredditTile';
 import DropdownHeader from '../Dropdown/DropdownHeader';
 
 const Header = () => {
+    // Reddit data from the store
     const reddit =  useSelector((state) => state.reddit);
     const { selectedSubreddit, subredditIcon } = reddit;
 
+    // Subreddit data from the store, stored in an array
     const subreddits = useSelector((state) => state.subreddits);
     const { subredditsList } = subreddits;
     const dispatch = useDispatch();
 
+    // Local state for search term and subreddit visibilty
     const [open, setOpen] = useState(false);
     const [localSearch, setLocalSearch] = useState('');
 
+    // Loads subreddit list on mount
     useEffect(() => {
         dispatch(fetchSubreddits());
     }, [dispatch]);
 
+    // Updates local search term
     const searchTermChange = (e) => {
         setLocalSearch(e.target.value);
     };
-
+    // dispatches the final local search to the selector
     const filterPosts = (e) => {
         e.preventDefault();
         dispatch(setSearchTerm(localSearch));
     };
 
+    // Toggles whether or not to display the subreddit dropdown
     const toggleOpen = () => {
         setOpen(!open);
     }

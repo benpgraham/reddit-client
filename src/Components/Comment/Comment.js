@@ -12,6 +12,7 @@ const Comment = ({ comment }) => {
                 <p>{comment.author}</p>
             </div>
             <div className="comment-body">
+                {/* ReactMarkdown interprets reddits comments as markdown and loads in links and styles */}
                 <ReactMarkdown className="comment-text" children={comment.body} />
             </div>
         </div>
