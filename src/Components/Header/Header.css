@@ -10,6 +10,7 @@ header .search {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 16px;
 }
 
 header .search-form input {
