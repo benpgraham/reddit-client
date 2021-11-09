@@ -2,6 +2,8 @@
 
 This project is a simple React/Redux client that interfaces with the outdated [Reddit JSON API](https://github.com/reddit-archive/reddit/wiki/JSON)
 
+Currently hosted [Here](https://simple-reddit-client.netlify.app)
+
 The site style is minimal and inspired by the layout of [Tumblr](https://tumblr.com)
 
 # Getting Started with Create React App
